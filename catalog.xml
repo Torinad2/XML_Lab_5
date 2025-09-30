@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!--
+   New Perspectives on XML
+   Tutorial 3
+   Case Problem 1
+
+   Catalog of photos from the Our Lady of Bergen Historical Society
+   Author: Nikita Baiborodov
+   Date: 09/29/2025
+
+   Filename:         catalog.xml
+   Supporting Files: catalog.xsd
+-->
+ 
+<catalog>
+
+   <photo cid="c1748" donatedBy="John Borelli">
+      <name metadata="tunis cooper property museum">Tunis R. Cooper property</name>
+      <description>
+      <![CDATA[ 
+         This photo was taken by John Borelli's great-grandfather. It is believed to have been taken around 1830.
+         David Demarest originally purchased the site of the chair factory in 1663. This site was under the ownership 
+         of the Demarest family until 1758.  The property is listed in the National and New Jersey Registers of Historic Places.
+      ]]>
+      </description>
+      <date>circa 1830</date>
+      <images>
+         <img src="1748a.jpg" />
+         <img src="1748b.jpg" />
+      </images>
+   </photo>
+
+   <photo cid="c1749" donatedBy="John Borelli">
+      <name metadata="tunis cooper property museum">Tunis R. Cooper property</name>
+      <description>
+      <![CDATA[ 
+         A more recent picture of the property taken by the Borelli family.  The property is listed in the 
+         National and New Jersey Registers of Historic Places.
+      ]]>
+      </description>
+      <date>circa 1950</date>
+      <images>
+         <img src="1749a.jpg" />
+      </images>
+   </photo>
+
+   <photo cid="c1411" donatedBy="Saint Johns Catholic Church">
+      <name metadata="saint johns catholic church">Saint Johns Church</name>
+      <description>
+      <![CDATA[ 
+         A more recent picture of the property taken by the Borelli family.  The property is listed in the 
+         National and New Jersey Registers of Historic Places.
+      ]]>
+      </description>      
+      <date>1921</date>
+   </photo>
+
+
+   <photo cid="c2003" donatedBy="Linda Choo">
+      <name metadata="bergenfield elementary school">Bergenfield School</name>
+      <description>
+      <![CDATA[ 
+         The No. 5 Public School, a.k.a. Bergenfield School
+      ]]>
+      </description>
+      <date>circa 1920</date>
+      <images>
+         <img src="2003a.jpg" />
+         <img src="2003b.jpg" />
+      </images>
+   </photo>
+
+   <photo cid="c2078" donatedBy="Maria Giodelli">
+      <name metadata="coopers pond water">Coopers Pond</name>
+      <description>
+      <![CDATA[ 
+         A favorite spot where we used to go hang out as kids.  The picture shows my brothers Robert and Michael.
+      ]]>
+      </description>
+      <date>May 4, 1941</date>
+      <images>
+         <img src="2078a.jpg" />
+      </images>
+   </photo>
+
+   <photo cid="c2079" donatedBy="Linda Uffington">
+      <name metadata="watch timekeeping pocket railway">Pocket Watch</name>
+      <description>
+      <![CDATA[ 
+         A more recent picture of the property taken by the Borelli family.  The property is listed in the 
+         National and New Jersey Registers of Historic Places.
+      ]]>
+      </description>
+      <date>circa 1870</date>
+      <images>
+         <img src="2079a.jpg" />
+         <img src="2079b.jpg" />
+      </images>
+   </photo>
+
+   <photo cid="c3233">
+      <name metadata="hotel">Bergenfield Hotel</name>
+      <description>
+      <![CDATA[ 
+         The Knollfield Hotel was known as the Bergenfield Hotel.  The property is listed in the 
+         National and New Jersey Registers of Historic Places.
+      ]]>
+      </description>
+      <date>circa 1920</date>
+   </photo>
+
+   <photo cid="c3433">
+      <name metadata="sweeney coal fuel">Sweeney Coal</name>
+      <description>
+      <![CDATA[ 
+         Sweeney Fuel Company located near New Bridge Road and railroad tracks.
+      ]]>
+      </description>
+      <date>1920</date>
+      <images>
+         <img src="3433a.jpg" />
+         <img src="3433b.jpg" />
+         <img src="3433c.jpg" />
+      </images>
+   </photo>
+
+</catalog>
