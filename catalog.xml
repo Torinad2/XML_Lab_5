@@ -11,8 +11,9 @@
    Filename:         catalog.xml
    Supporting Files: catalog.xsd
 -->
- 
-<catalog>
+
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="catalog.xsd">
 
    <photo cid="c1748" donatedBy="John Borelli">
       <name metadata="tunis cooper property museum">Tunis R. Cooper property</name>

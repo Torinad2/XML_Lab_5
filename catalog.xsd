@@ -10,4 +10,95 @@
 
    Filename:         catalog.xsd
    Supporting Files: catalog.xml
--->      
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Step 1: Create cidType, based on the ID data type and restricted to the regular expression
+    pattern c\d{4} -->
+    <xs:simpleType name="cidType">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="c\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Step 2: Create srcType, based on the string data type and restricted to the regular expression
+    pattern [a-zA-Z0-9]+.jpg -->
+    <xs:simpleType name="srcType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]+.jpg"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Step 3: Declare the catalog element containing the child element photo. The photo element must
+    occur at least once, but its upper limit is unbounded. -->
+    <xs:element name="catalog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="photo" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Step 4: Declare the photo element containing the following sequence of nested child elements—name,
+    description, date, and images. Set the following properties for the nested elements:
+    a. All of the child elements should contain string data. The name element should also support
+    the metadata attribute.
+    b. The cid attribute is required. The donatedBy attribute is optional. -->
+    <xs:element name="photo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute ref="metadata" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element ref="description"/>
+                <xs:element ref="date"/>
+
+                <xs:element name="images" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="img" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute ref="src" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+
+            <xs:attribute ref="cid" use="required"/>
+            <xs:attribute ref="donatedBy" use="optional"/>
+
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Step 5: Declare the img element. It has no content and contains a required attribute, src. -->
+    <xs:element name="img">
+        <xs:complexType>
+            <xs:attribute ref="src" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Step 6: Declare the following attributes and elements:
+    a. The attribute metadata must have the string data type.
+    b. The attribute cid must have the cidType data type.
+    c. The attribute src must have the srcType data type.
+    d. The attribute donatedBy must have the string data type.
+    e. The element description must have the string data type.
+    f. The element date must have the string data type. -->
+    <xs:attribute name="metadata" type="xs:string"/>
+    <xs:attribute name="cid" type="cidType"/>
+    <xs:attribute name="src" type="srcType"/>
+    <xs:attribute name="donatedBy" type="xs:string"/>
+    <xs:element name="description" type="xs:string"/>
+    <xs:element name="date" type="xs:string"/>
+
+</xs:schema>
